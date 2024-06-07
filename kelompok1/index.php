@@ -92,7 +92,12 @@
                 echo "<h3 class='text-xl font-bold'>Hour: " . $hour . "</h3>";
                 echo "<ul class='mt-2'>";
                 foreach ($activities as $activity) {
-                    echo "<li class='mb-2'>Priority " . $activity["priority"] . ": " . $activity["activity"] . "</li>";
+                    echo "<li class='mb-2'>Priority " . $activity["priority"] . ": " . $activity["activity"] . " 
+                    <form action='delete.php' method='post' style='display:inline;'>
+                        <input type='hidden' name='activity_id' value='" . $activity["id"] . "'>
+                        <button type='submit' class='bg-red-500 text-white px-2 py-1 rounded ml-2'>Delete</button>
+                    </form>
+                    </li>";
                 }
                 echo "</ul>";
                 echo "</div>";
